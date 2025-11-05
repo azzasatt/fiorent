@@ -1,0 +1,2593 @@
+/* style.css */
+
+/* ===== CSS ПЕРЕМЕННЫЕ ===== */
+:root {
+  /* Основные цвета - синяя схема */
+  --primary-blue: #1e3a8a;
+  --accent-gold: #fadd7f;
+  --cream-white: #fefefe;
+  --dark-text: #1f2937;
+  --light-text: #f8fafc;
+  
+  /* Тема УТРА */
+  --bg-color: #e0f2fe;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --text-color: #415897;
+  --accent-color: #fadd7f;
+  --shadow: 0 4px 20px rgba(30, 58, 138, 0.1);
+  --overlay: rgba(224, 242, 254, 0.8);
+
+  /* тема дня*/
+  --bg-color: #dbeafe;
+  --card-bg: rgba(255, 255, 255, 0.98);
+  --header-bg: rgba(232, 239, 250, 0.95);
+  --text-color: #1e40af;
+  --accent-color: #f59e0b;
+  --shadow: 0 6px 25px rgba(37, 99, 235, 0.15);
+  --overlay: rgba(219, 234, 254, 0.85);
+
+   /* Тема ВЕЧЕРА */
+  --bg-color: #1e3a8a;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --header-bg: rgba(30, 58, 138, 0.9);
+  --text-color: #f8fafc;
+  --accent-color: #fbbf24;
+  --shadow: 0 8px 30px rgba(251, 191, 36, 0.2);
+  --overlay: rgba(30, 58, 138, 0.9);
+
+   /* Тема НОЧИ */
+  --bg-color: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --header-bg: rgba(15, 23, 42, 0.95);
+  --text-color: #e2e8f0;
+  --accent-color: #f59e0b;
+  --shadow: 0 8px 30px rgba(245, 158, 11, 0.25);
+  --overlay: rgba(15, 23, 42, 0.95);
+}
+
+[data-time="morning"] {
+ --bg-color: #e0f2fe;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --text-color: #415897;
+  --accent-color: #fadd7f;
+  --shadow: 0 4px 20px rgba(30, 58, 138, 0.1);
+  --overlay: rgba(224, 242, 254, 0.8);
+}
+
+[data-time="day"] {
+  /* Тема ДНЯ */
+  --bg-color: #dbeafe;
+  --card-bg: rgba(255, 255, 255, 0.98);
+  --header-bg: rgba(232, 239, 250, 0.95);
+  --text-color: #1e40af;
+  --accent-color: #f59e0b;
+  --shadow: 0 6px 25px rgba(37, 99, 235, 0.15);
+  --overlay: rgba(219, 234, 254, 0.85);
+}
+
+[data-time="evening"] {
+  /* Тема ВЕЧЕРА */
+  --bg-color: #1e3a8a;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --header-bg: rgba(30, 58, 138, 0.9);
+  --text-color: #f8fafc;
+  --accent-color: #fbbf24;
+  --shadow: 0 8px 30px rgba(251, 191, 36, 0.2);
+  --overlay: rgba(30, 58, 138, 0.9);
+}
+
+[data-time="night"] {
+  /* Тема НОЧИ */
+  --bg-color: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --header-bg: rgba(15, 23, 42, 0.95);
+  --text-color: #e2e8f0;
+  --accent-color: #f59e0b;
+  --shadow: 0 8px 30px rgba(245, 158, 11, 0.25);
+  --overlay: rgba(15, 23, 42, 0.95);
+}
+
+
+
+/* ===== ШРИФТЫ ДЛЯ ТЕМ НАСТРОЕНИЯ ===== */
+
+/* Базовые шрифты */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap');
+
+
+/* ===== ТЕМЫ НАСТРОЕНИЯ С ПРАВИЛЬНЫМИ ЦВЕТАМИ ===== */
+
+/* 🌸 УМИРОТВОРЕННАЯ ТЕМА - пастельные тона без белого */
+[data-mood="peaceful"] {
+  /* Пастельная палитра: желтый, розовый, сиреневый */
+  --bg-color: #fffaf3;
+  --card-bg: rgba(255, 245, 235, 0.95);
+  --header-bg: rgba(255, 250, 243, 0.9);
+  --text-color: #5a4a42;
+  --accent-color: #c8a2c8;
+  --shadow: 0 4px 20px rgba(200, 162, 200, 0.2);
+  --overlay: rgba(255, 245, 235, 0.85);
+  --border-color: rgba(200, 162, 200, 0.3);
+  
+  /* Дополнительные пастельные цвета */
+  --pastel-yellow: #fff9c4;
+  --pastel-pink: #f8bbd9;
+  --pastel-purple: #e1bee7;
+  --pastel-lavender: #d1c4e9;
+}
+
+/* 🍊 ЭНЕРГИЧНЫЙ ТЕМА - летний морской вайб */
+[data-mood="energetic"] {
+  /* Летняя морская палитра: оранжевый, ярко-синий */
+  --bg-color: #e3f2fd;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --header-bg: rgba(227, 242, 253, 0.9);
+  --text-color: #1a237e;
+  --accent-color: #ff6d00;
+  --shadow: 0 6px 25px rgba(255, 109, 0, 0.25);
+  --overlay: rgba(227, 242, 253, 0.85);
+  --border-color: rgba(255, 109, 0, 0.3);
+  
+  /* Дополнительные летние цвета */
+  --summer-orange: #ff6d00;
+  --summer-blue: #2979ff;
+  --summer-sand: #ffecb3;
+  --summer-sea: #40c4ff;
+}
+
+/* 🌙 ЗАГАДОЧНЫЙ ТЕМА - оставляем как есть */
+[data-mood="mysterious"] {
+  --bg-color: #0f0f1f;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --header-bg: rgba(15, 15, 31, 0.95);
+  --text-color: #e2e8f0;
+  --accent-color: #8b5cf6;
+  --shadow: 0 8px 30px rgba(139, 92, 246, 0.25);
+  --overlay: rgba(15, 15, 31, 0.9);
+  --border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* ===== УЛУЧШЕННЫЕ СТИЛИ ДЛЯ НОВЫХ ЦВЕТОВ ===== */
+
+/* 🌸 УМИРОТВОРЕННАЯ - пастельные кнопки */
+[data-mood="peaceful"] .btn-primary,
+[data-mood="peaceful"] .booking-btn,
+[data-mood="peaceful"] .submit-btn {
+  background: linear-gradient(135deg, #c8a2c8, #e1bee7) !important;
+  color: #5a4a42 !important;
+  border: 2px solid #c8a2c8 !important;
+  font-weight: 600 !important;
+}
+
+[data-mood="peaceful"] .btn-secondary,
+[data-mood="peaceful"] .restaurant-btn {
+  background: transparent !important;
+  color: #c8a2c8 !important;
+  border: 2px solid #c8a2c8 !important;
+}
+
+[data-mood="peaceful"] .btn-secondary:hover,
+[data-mood="peaceful"] .restaurant-btn:hover {
+  background: #c8a2c8 !important;
+  color: #fffaf3 !important;
+}
+
+[data-mood="peaceful"] .theme-toggle {
+  background: rgba(255, 245, 235, 0.9) !important;
+  border: 2px solid #c8a2c8 !important;
+  color: #5a4a42 !important;
+}
+
+[data-mood="peaceful"] .theme-toggle:hover {
+  background: #c8a2c8 !important;
+  color: #fffaf3 !important;
+}
+
+/* 🍊 ЭНЕРГИЧНЫЙ - летние контрастные кнопки */
+[data-mood="energetic"] .btn-primary,
+[data-mood="energetic"] .booking-btn,
+[data-mood="energetic"] .submit-btn {
+  background: linear-gradient(135deg, #ff6d00, #ff9100) !important;
+  color: white !important;
+  border: 2px solid #ff6d00 !important;
+  font-weight: 700 !important;
+}
+
+[data-mood="energetic"] .btn-secondary,
+[data-mood="energetic"] .restaurant-btn {
+  background: transparent !important;
+  color: #ff6d00 !important;
+  border: 2px solid #ff6d00 !important;
+  font-weight: 600 !important;
+}
+
+[data-mood="energetic"] .btn-secondary:hover,
+[data-mood="energetic"] .restaurant-btn:hover {
+  background: #ff6d00 !important;
+  color: white !important;
+}
+
+[data-mood="energetic"] .theme-toggle {
+  background: rgba(227, 242, 253, 0.9) !important;
+  border: 2px solid #ff6d00 !important;
+  color: #1a237e !important;
+}
+
+[data-mood="energetic"] .theme-toggle:hover {
+  background: #ff6d00 !important;
+  color: white !important;
+}
+
+/* 🌙 ЗАГАДОЧНЫЙ - фиолетовые акценты */
+[data-mood="mysterious"] .btn-primary,
+[data-mood="mysterious"] .booking-btn,
+[data-mood="mysterious"] .submit-btn {
+  background: #8b5cf6 !important;
+  color: white !important;
+  border: 2px solid #8b5cf6 !important;
+}
+
+[data-mood="mysterious"] .btn-secondary,
+[data-mood="mysterious"] .restaurant-btn {
+  background: transparent !important;
+  color: #8b5cf6 !important;
+  border: 2px solid #8b5cf6 !important;
+}
+
+[data-mood="mysterious"] .btn-secondary:hover,
+[data-mood="mysterious"] .restaurant-btn:hover {
+  background: #8b5cf6 !important;
+  color: white !important;
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ ЭФФЕКТЫ ДЛЯ ТЕМ ===== */
+
+/* УМИРОТВОРЕННАЯ - мягкие градиенты */
+[data-mood="peaceful"] .hero {
+  background: linear-gradient(135deg, #fffaf3 0%, #fff9c4 50%, #f8bbd9 100%) !important;
+}
+
+[data-mood="peaceful"] .menu-section {
+  background: linear-gradient(135deg, #fffaf3, #e1bee7) !important;
+}
+
+[data-mood="peaceful"] .gallery {
+  background: linear-gradient(135deg, #fffaf3, #d1c4e9) !important;
+}
+
+/* ЭНЕРГИЧНЫЙ - морские градиенты */
+[data-mood="energetic"] .hero {
+  background: linear-gradient(135deg, #e3f2fd 0%, #ffecb3 50%, #40c4ff 100%) !important;
+}
+
+[data-mood="energetic"] .menu-section {
+  background: linear-gradient(135deg, #e3f2fd, #ffecb3) !important;
+}
+
+[data-mood="energetic"] .gallery {
+  background: linear-gradient(135deg, #e3f2fd, #2979ff) !important;
+}
+
+/* ЗАГАДОЧНЫЙ - глубокие градиенты */
+[data-mood="mysterious"] .hero {
+  background: linear-gradient(135deg, #0f0f1f 0%, #1a1a2f 50%, #2d1b69 100%) !important;
+}
+
+/* ===== УЛУЧШЕННЫЕ ТЕНИ И ЭФФЕКТЫ ===== */
+
+[data-mood="peaceful"] .gallery-item,
+[data-mood="peaceful"] .restaurant-card,
+[data-mood="peaceful"] .menu-item,
+[data-mood="peaceful"] .booking-card {
+  box-shadow: 0 8px 25px rgba(200, 162, 200, 0.15) !important;
+}
+
+[data-mood="energetic"] .gallery-item,
+[data-mood="energetic"] .restaurant-card,
+[data-mood="energetic"] .menu-item,
+[data-mood="energetic"] .booking-card {
+  box-shadow: 0 8px 25px rgba(255, 109, 0, 0.2) !important;
+}
+
+[data-mood="mysterious"] .gallery-item,
+[data-mood="mysterious"] .restaurant-card,
+[data-mood="mysterious"] .menu-item,
+[data-mood="mysterious"] .booking-card {
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3) !important;
+}
+
+/* ===== АКЦЕНТНЫЕ ЭЛЕМЕНТЫ ===== */
+
+[data-mood="peaceful"] .nav-link::after {
+  background: #c8a2c8 !important;
+}
+
+[data-mood="energetic"] .nav-link::after {
+  background: #ff6d00 !important;
+}
+
+[data-mood="mysterious"] .nav-link::after {
+  background: #8b5cf6 !important;
+}
+
+/* Цвет логотипа для каждой темы */
+[data-mood="peaceful"] .logo {
+  color: #c8a2c8 !important;
+}
+
+[data-mood="energetic"] .logo {
+  color: #ff6d00 !important;
+}
+
+[data-mood="mysterious"] .logo {
+  color: #8b5cf6 !important;
+}
+
+
+
+/*ВКСАМПРОЛВКСАЕМПИР ВУКАЕПНРГОШУВКАЕНРГОШКАЕПНРГ*/
+/* ===== СМЕНА ФОНОВЫХ ИЗОБРАЖЕНИЙ ДЛЯ ТЕМ НАСТРОЕНИЯ ===== */
+
+/* Изначально скрываем все дополнительные фоны */
+.peaceful-hero,
+.energetic-hero,
+.mysterious-hero {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Показываем нужный фон в зависимости от темы */
+
+/* Временные темы - основной фон */
+[data-time="morning"] .hero-image:not(.peaceful-hero):not(.energetic-hero):not(.mysterious-hero),
+[data-time="day"] .hero-image:not(.peaceful-hero):not(.energetic-hero):not(.mysterious-hero),
+[data-time="evening"] .hero-image:not(.peaceful-hero):not(.energetic-hero):not(.mysterious-hero),
+[data-time="night"] .hero-image:not(.peaceful-hero):not(.energetic-hero):not(.mysterious-hero) {
+  display: block;
+  opacity: 1;
+}
+
+/* УМИРОТВОРЕННАЯ ТЕМА - лавандовый фон */
+[data-mood="peaceful"] .hero-image {
+  display: none;
+  opacity: 0;
+}
+
+[data-mood="peaceful"] .peaceful-hero {
+  display: block;
+  opacity: 1;
+}
+
+[data-mood="peaceful"] .hero-background {
+  background: linear-gradient(135deg, rgba(255, 250, 243, 0.7), rgba(200, 162, 200, 0.5)) !important;
+}
+
+/* ЭНЕРГИЧНЫЙ ТЕМА - морской фон */
+[data-mood="energetic"] .hero-image {
+  display: none;
+  opacity: 0;
+}
+
+[data-mood="energetic"] .energetic-hero {
+  display: block;
+  opacity: 1;
+}
+
+[data-mood="energetic"] .hero-background {
+  background: linear-gradient(135deg, rgba(227, 242, 253, 0.7), rgba(255, 109, 0, 0.4)) !important;
+}
+
+/* ЗАГАДОЧНЫЙ ТЕМА - ночной фон */
+[data-mood="mysterious"] .hero-image {
+  display: none;
+  opacity: 0;
+}
+
+[data-mood="mysterious"] .mysterious-hero {
+  display: block;
+  opacity: 1;
+}
+
+[data-mood="mysterious"] .hero-background {
+  background: linear-gradient(135deg, rgba(15, 15, 31, 0.7), rgba(139, 92, 246, 0.5)) !important;
+}
+
+/* ===== ПЛАВНЫЕ ПЕРЕХОДЫ ДЛЯ ФОНОВ ===== */
+.hero-background {
+  position: relative;
+  transition: all 0.8s ease-in-out;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.8s ease-in-out;
+  filter: brightness(0.8);
+}
+
+/* Улучшенные наложения для каждой темы */
+[data-mood="peaceful"] .hero-overlay {
+  background: linear-gradient(135deg, 
+    rgba(255, 250, 243, 0.3) 0%,
+    rgba(200, 162, 200, 0.5) 100%) !important;
+}
+
+[data-mood="energetic"] .hero-overlay {
+  background: linear-gradient(135deg, 
+    rgba(227, 242, 253, 0.3) 0%,
+    rgba(255, 109, 0, 0.4) 100%) !important;
+}
+
+[data-mood="mysterious"] .hero-overlay {
+  background: linear-gradient(135deg, 
+    rgba(15, 15, 31, 0.5) 0%,
+    rgba(139, 92, 246, 0.6) 100%) !important;
+}
+
+/* ===== АНИМАЦИЯ ПРИ СМЕНЕ ТЕМЫ ===== */
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-image {
+  animation: fadeInHero 1s ease-in-out;
+}
+
+/* ===== ОБЕСПЕЧИВАЕМ КОРРЕКТНУЮ РАБОТУ С ВРЕМЕННЫМИ ТЕМАМИ ===== */
+
+/* Когда нет темы настроения, показываем основной фон */
+html:not([data-mood]) .hero-image:not(.peaceful-hero):not(.energetic-hero):not(.mysterious-hero) {
+  display: block;
+  opacity: 1;
+}
+
+html:not([data-mood]) .peaceful-hero,
+html:not([data-mood]) .energetic-hero,
+html:not([data-mood]) .mysterious-hero {
+  display: none;
+  opacity: 0;
+}
+
+/* ===== ПРИМЕНЕНИЕ ШРИФТОВ К ЭЛЕМЕНТАМ ===== */
+
+/* Базовые стили шрифтов для body */
+body {
+  font-family: var(--font-primary, 'Georgia', serif);
+  transition: all 0.5s ease;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading, 'Playfair Display', serif) !important;
+  transition: all 0.5s ease;
+}
+
+/* Навигация и акцентные элементы */
+.nav-link,
+.booking-btn,
+.language-switcher,
+.theme-toggle,
+.btn-primary,
+.btn-secondary,
+.submit-btn,
+.restaurant-btn {
+  font-family: var(--font-accent, 'Inter', sans-serif) !important;
+  transition: all 0.5s ease;
+}
+
+/* Логотип */
+.logo {
+  font-family: var(--font-heading, 'Playfair Display', serif) !important;
+  transition: all 0.5s ease;
+}
+
+/* Герой секция */
+.hero-title {
+  font-family: var(--font-heading, 'Playfair Display', serif) !important;
+  transition: all 0.5s ease;
+}
+
+.hero-subtitle {
+  font-family: var(--font-primary, 'Georgia', serif) !important;
+  transition: all 0.5s ease;
+}
+
+/* Карточки меню */
+.menu-item-content h3 {
+  font-family: var(--font-heading, 'Playfair Display', serif) !important;
+  transition: all 0.5s ease;
+}
+
+.menu-item-content p {
+  font-family: var(--font-primary, 'Georgia', serif) !important;
+  transition: all 0.5s ease;
+}
+
+/* Карусель */
+.carousel-item {
+  font-family: var(--font-accent, 'Inter', sans-serif) !important;
+  transition: all 0.5s ease;
+}
+
+/* Футер */
+.footer-section h3,
+.footer-section h4 {
+  font-family: var(--font-heading, 'Playfair Display', serif) !important;
+  transition: all 0.5s ease;
+}
+
+.footer-section p,
+.social-links a {
+  font-family: var(--font-primary, 'Georgia', serif) !important;
+  transition: all 0.5s ease;
+}
+
+/* Форма бронирования */
+.booking-content h2 {
+  font-family: var(--font-heading, 'Playfair Display', serif) !important;
+  transition: all 0.5s ease;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  font-family: var(--font-primary, 'Georgia', serif) !important;
+  transition: all 0.5s ease;
+}
+
+/* Модальное окно */
+.booking-modal__title {
+  font-family: var(--font-heading, 'Playfair Display', serif) !important;
+  transition: all 0.5s ease;
+}
+
+.booking-modal__message,
+.booking-modal__detail,
+.booking-modal__tips li {
+  font-family: var(--font-primary, 'Georgia', serif) !important;
+  transition: all 0.5s ease;
+}
+
+/* ===== ОСОБЕННОСТИ ШРИФТОВ ДЛЯ КАЖДОЙ ТЕМЫ ===== */
+
+/* УМИРОТВОРЕННАЯ - мягкие и плавные */
+[data-mood="peaceful"] body {
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+}
+
+[data-mood="peaceful"] h1,
+[data-mood="peaceful"] h2,
+[data-mood="peaceful"] h3 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ЭНЕРГИЧНЫЙ - динамичные и четкие */
+[data-mood="energetic"] body {
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.1px;
+}
+
+[data-mood="energetic"] h1,
+[data-mood="energetic"] h2,
+[data-mood="energetic"] h3 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+[data-mood="energetic"] .nav-link,
+[data-mood="energetic"] .btn-primary,
+[data-mood="energetic"] .btn-secondary {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ЗАГАДОЧНЫЙ - элегантные и утонченные */
+[data-mood="mysterious"] body {
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
+[data-mood="mysterious"] h1,
+[data-mood="mysterious"] h2,
+[data-mood="mysterious"] h3 {
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+[data-mood="mysterious"] .logo {
+  letter-spacing: 2px;
+}
+
+/* ===== ПЛАВНЫЕ ПЕРЕХОДЫ ДЛЯ ШРИФТОВ ===== */
+body * {
+  transition: font-family 0.5s ease, 
+              font-weight 0.5s ease, 
+              letter-spacing 0.5s ease,
+              line-height 0.5s ease !important;
+}
+
+
+
+
+
+
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: all 0.5s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== ТИПОГРАФИЯ ===== */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent-color);
+}
+
+.since {
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--header-bg);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -25px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.language-switcher {
+  background: none;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-switcher:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+
+
+/* ===== КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ ===== */
+.theme-toggle {
+    /* Основные стили - компактные и прямые углы */
+    background: var(--card-bg);
+    border: 1.5px solid var(--accent-color); /* Тонкая рамка */
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem; /* Уменьшили отступы */
+    border-radius: 4px; /* Минимальное скругление вместо 50px */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    /* Flex для выравнивания иконки и текста */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem; /* Уменьшили расстояние */
+    
+    /* Тень и эффекты */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    
+    /* Размер шрифта */
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Псевдо-элемент для анимации фона */
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.1), 
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+/* Анимация при наведении */
+.theme-toggle:hover {
+    transform: translateY(-1px); /* Меньший подъем */
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+    border-color: var(--accent-color);
+}
+
+.theme-toggle:hover::before {
+    left: 100%;
+}
+
+/* Анимация при клике */
+.theme-toggle:active {
+    transform: translateY(0) scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+/* Иконка темы */
+.theme-icon {
+    font-size: 1rem; /* Уменьшили иконку */
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Анимация иконки при наведении */
+.theme-toggle:hover .theme-icon {
+    transform: scale(1.1) rotate(10deg); /* Более скромная анимация */
+}
+
+/* Текст темы */
+.theme-text {
+    font-size: 0.8rem; /* Уменьшили текст */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+/* Убираем текст на мобильных */
+@media (max-width: 768px) {
+    .theme-text {
+        display: none;
+    }
+    
+    .theme-toggle {
+        padding: 0.5rem; /* Квадратная кнопка */
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* ===== АДАПТАЦИЯ КНОПКИ ПОД РАЗНЫЕ ТЕМЫ ===== */
+
+/* УТРО - светлая тема */
+[data-time="morning"] .theme-toggle {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #d4af37;
+    color: #1e3a8a;
+}
+
+/* ДЕНЬ - яркая тема */
+[data-time="day"] .theme-toggle {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #f59e0b;
+    color: #1e40af;
+}
+
+/* ВЕЧЕР - темная тема */
+[data-time="evening"] .theme-toggle {
+    background: rgba(30, 58, 138, 0.8);
+    border-color: #fbbf24;
+    color: #f8fafc;
+}
+
+/* НОЧЬ - очень темная тема */
+[data-time="night"] .theme-toggle {
+    background: rgba(15, 23, 42, 0.8);
+    border-color: #f59e0b;
+    color: #e2e8f0;
+}
+
+/* ===== АНИМАЦИЯ ПЕРЕКЛЮЧЕНИЯ ТЕМ ===== */
+
+/* Анимация для иконки при смене темы */
+.theme-toggle.rotating .theme-icon {
+    animation: rotateTheme 0.5s ease;
+}
+
+@keyframes rotateTheme {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+/* Анимация пульсации при смене темы */
+.theme-toggle.pulsing {
+    animation: pulseTheme 0.6s ease;
+}
+
+@keyframes pulseTheme {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.3);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(212, 175, 55, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
+/* ===== ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ NAV-ACTIONS ===== */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* Уменьшили расстояние между кнопками */
+}
+
+/* Делаем кнопку бронирования компактнее */
+.booking-btn.nav-booking {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 4px; /* Согласовали скругление */
+}
+
+
+
+.booking-btn {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.booking-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+
+/* ===== БУРГЕР МЕНЮ ===== */
+/* ===== БУРГЕР МЕНЮ ===== */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    gap: 4px;
+    z-index: 1002;
+    position: relative;
+}
+
+.burger-line {
+    width: 24px;
+    height: 2px;
+    background: var(--text-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+/* Анимация бургера при активном состоянии */
+.burger-menu.active .burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-menu.active .burger-line:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.burger-menu.active .burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО МОБИЛЬНОГО МЕНЮ ===== */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    background: var(--card-bg);
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active .mobile-menu__content {
+    transform: translateX(0);
+}
+
+/* Заголовок мобильного меню */
+.mobile-menu__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-menu__logo h2 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 0 5px 0;
+}
+
+.mobile-menu__logo span {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Кнопка закрытия */
+.mobile-menu__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.mobile-menu__close:hover {
+    background: var(--bg-color);
+    color: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+/* Навигация мобильного меню */
+.mobile-menu__nav {
+    flex: 1;
+}
+
+.mobile-menu__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu__link {
+    display: block;
+    padding: 16px 0;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-menu__link::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    transition: left 0.3s ease;
+}
+
+.mobile-menu__link:hover {
+    color: var(--accent-color);
+    padding-left: 15px;
+}
+
+.mobile-menu__link:hover::before {
+    left: 0;
+}
+
+/* Анимация появления ссылок */
+.mobile-menu__link {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.4s ease;
+}
+
+.mobile-menu.active .mobile-menu__link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Задержка для каждой ссылки */
+.mobile-menu__link:nth-child(1) { transition-delay: 0.1s; }
+.mobile-menu__link:nth-child(2) { transition-delay: 0.15s; }
+.mobile-menu__link:nth-child(3) { transition-delay: 0.2s; }
+.mobile-menu__link:nth-child(4) { transition-delay: 0.25s; }
+.mobile-menu__link:nth-child(5) { transition-delay: 0.3s; }
+
+/* Кнопки в мобильном меню */
+.mobile-menu__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.mobile-menu__theme,
+.mobile-menu__language {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 14px 20px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.mobile-menu__theme:hover,
+.mobile-menu__language:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.mobile-menu__booking {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.mobile-menu__booking:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* ===== АДАПТИВ ДЛЯ МОБИЛЬНЫХ ===== */
+@media (max-width: 768px) {
+    .nav-menu,
+    .nav-actions {
+        display: none;
+    }
+    
+    .burger-menu {
+        display: flex;
+    }
+}
+
+/* Предотвращаем скролл тела при открытом меню */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Плавное открытие оверлея */
+.mobile-menu {
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Адаптив для очень маленьких экранов */
+@media (max-width: 480px) {
+    .mobile-menu__content {
+        width: 280px;
+        padding: 15px;
+    }
+    
+    .mobile-menu__link {
+        font-size: 1rem;
+        padding: 14px 0;
+    }
+}
+
+
+
+
+
+/* ===== HERO SECTION пкрпктприукиукпукрикппкпргеорпегргпрегпргепрегрпегрпегпргерпегпрегпкшалукшаоушоа===== */
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  overflow: hidden; 
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero-background {
+    position: absolute;            /* Позиционирование: абсолютное (не влияет на поток) */
+    top: 0;                       /* Позиция: сверху 0px */
+    left: 0;                      /* Позиция: слева 0px */
+    width: 100%;                  /* Ширина: 100% родителя */
+    height: 100%;                 /* Высота: 100% родителя */
+    z-index: 1;                   /* Слой: 1 (нижний слой) */
+}
+
+.hero-image {
+    width: 100%;                  /* Ширина: 100% контейнера */
+    height: 100%;                 /* Высота: 100% контейнера */
+    object-fit: cover;            /* Обрезка: заполнить контейнер, обрезая лишнее */
+    object-position: center;      /* Позиция: центрировать изображение */
+    filter: brightness(0.8);      /* Фильтр: яркость 80% (затемнение) */
+}
+
+.hero-overlay {
+    position: absolute;            /* Позиционирование: абсолютное */
+    top: 0;                       /* Позиция: сверху 0px */
+    left: 0;                      /* Позиция: слева 0px */
+    width: 100%;                  /* Ширина: 100% */
+    height: 100%;                 /* Высота: 100% */
+    background: rgba(0, 0, 0, 0.4); /* Фон: черный с 40% прозрачности */
+    z-index: 2;                   /* Слой: 2 (поверх фото, под текстом) */
+}
+/*KONTENT POVERX OSTALNOGO*/
+
+.hero-content {
+    position: relative;            /* Позиционирование: относительное */
+    z-index: 3;                   /* Слой: 3 (самый верхний) */
+    max-width: 800px;             /* Макс.ширина: не больше 800px */
+    padding: 0 20px;              /* Отступы: 0 сверху-снизу, 20px слева-справа */
+    color: white;                 /* Цвет текста: белый */
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: var(--primary-blue);
+}
+
+
+/* Медиа-запрос: применяется когда ширина экрана <= 1024px */
+@media (max-width: 1024px) {
+    .hero {
+        height: 80vh;             /* Высота: 80% от высоты окна */
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;        /* Размер шрифта: уменьшаем до 1.3rem */
+        margin-bottom: 2rem;      /* Отступ снизу: уменьшаем до 2rem */
+    }
+    
+    .hero-buttons {
+        gap: 1rem;                /* Расстояние между кнопками: уменьшаем до 1rem */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;             /* Высота: 70% от высоты окна */
+        min-height: 500px;        /* Минимальная высота: 500px (чтобы не было слишком мало) */
+    }
+    
+    .hero-content {
+        padding: 0 15px;          /* Отступы: уменьшаем до 15px */
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;        /* Размер шрифта: еще меньше */
+        margin-bottom: 2rem;      /* Отступ снизу */
+    }
+    
+    .hero-buttons {
+        flex-direction: column;   /* Направление flex: колонка (вертикально) */
+        align-items: center;      /* Выравнивание: по центру */
+        gap: 1rem;                /* Расстояние: 1rem */
+        width: 100%;              /* Ширина: 100% */
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;              /* Ширина кнопок: 100% контейнера */
+        max-width: 280px;         /* Но не больше 280px */
+        padding: 0.9rem 1.5rem;   /* Отступы: немного уменьшаем */
+    }
+    
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.5); /* Затемнение: увеличиваем до 50% прозрачности */
+    }
+}
+
+
+
+
+
+
+/* ===== ABOUTртттнесампиртоаемпниртоьлампниргтоьлмпиртоьлмпиртоьмпиртоьмпиртоьмпиртоаемпиртоампниртомпирт SECTION ===== */
+.about {
+  padding: 6rem 0;
+  background: var(--bg-color);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.about-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* ===== ТЕКСТ ===== */
+.about-content {
+  text-align: left; /* МЕНЯЕМ: было center, стало left */
+}
+
+.about-text {
+  margin-bottom: 3rem;
+}
+
+.about-content h2 {
+  color: var(--accent-color)
+}
+
+.about-text p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-family: 'Georgia', serif;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== СТАТИСТИКА ===== */
+.about-stats {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* ===== ИЗОБРАЖЕНИЕ ===== */
+.about-image {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* ===== АДАПТИВ ДЛЯ ПЛАНШЕТА ===== */
+@media (max-width: 1024px) {
+  .about-grid {
+    gap: 3rem;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .about-text p:first-child::first-letter {
+    font-size: 3.5em;
+  }
+}
+
+/* ===== АДАПТИВ ДЛЯ ТЕЛЕФОНА ===== */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-title {
+    font-size: 2.2rem;
+  }
+  
+  .about-content {
+    text-align: center; /* На мобильных центрируем */
+  }
+  
+  .about-text p {
+    text-align: center;
+  }
+  
+  /* На мобильных убираем буквицу */
+  .about-text p:first-child::first-letter {
+    float: none;
+    font-size: inherit;
+    color: inherit;
+    margin: 0;
+  }
+  
+  .about-stats {
+    gap: 2rem;
+  }
+  
+  .about-image {
+    order: -1;
+  }
+}
+
+/* ===== АДАПТИВ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ ===== */
+@media (max-width: 480px) {
+  .about-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .about-text p {
+    font-size: 1.05rem;
+  }
+}
+
+
+
+
+
+
+/* ===== MENU SECTIONчвсампиртоаесмпиртосемнигртошчвксаемпнирт вксаемпниргтоьсаемпниргтоьвсаемпниргтосампиртосаемпниргт ===== */
+.menu-section {
+  padding: 5rem 0;
+  background: var(--card-bg);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.time-indicator {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.menu-item {
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  height: 450px; /* Уменьшаем общую высоту карточки */
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.menu-item-image {
+  height: 200px; /* Уменьшаем высоту изображения */
+  overflow: hidden;
+  flex-shrink: 0; /* Чтобы изображение не сжималось */
+}
+
+.menu-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover .menu-item-image img {
+  transform: scale(1.1);
+}
+
+.menu-item-content {
+  padding: 1.5rem;
+  flex-grow: 1; /* Занимает оставшееся пространство */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Равномерно распределяем контент */
+}
+
+.menu-item-content h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  display: block;
+  margin-top: 1rem;
+}
+
+
+/* Стили для плавной смены меню */
+.menu-item {
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-grid {
+    min-height: 500px; /* Чтобы контейнер не прыгал при смене контента */
+}
+
+/* Анимация для смены заголовка */
+.section-header h2 {
+    transition: all 0.3s ease;
+}
+
+.time-indicator {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .menu-item {
+    height: 350px; /* Еще меньше на мобильных */
+  }
+  
+  .menu-item-image {
+    height: 140px;
+  }
+  
+  .menu-item-content {
+    padding: 1rem;
+  }
+}
+
+
+/* ===== CAROUSEL БЛЮДАЮДАБЮДАБЮДАБЮДАБЮДАБЮДАБЮДАБЮДАБЮДА===== */
+.carousel-section {
+  padding: 3rem 0;
+  background: var(--bg-color);
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  animation: carousel-scroll 30s linear infinite;
+  gap: 3rem;
+}
+
+.carousel-item {
+  white-space: nowrap;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-item:hover {
+  opacity: 1;
+}
+
+@keyframes carousel-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+/* ===== RESTAURANTS РЕСТОРАНРЕСТОРСТОРЕСТОРЕСТОРЕСТОРЕСТОРЕСТОРЕСТОРЕСТОРЕСТОРЕСТОРЕСТОРЕСТОРЕСТОРЕСТО ===== */
+.restaurants {
+  padding: 5rem 0;
+}
+
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.restaurant-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+}
+
+.restaurant-card h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+}
+
+.restaurant-image {
+  height: 150px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.restaurant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.restaurant-btn {
+  background: none;
+  border: 2px solid var(--accent-color);
+  color: var(--text-color);
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.restaurant-btn:hover {
+  background: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.restaurant-btn .arrow {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.restaurant-btn:hover .arrow {
+  transform: translateX(5px);
+}
+
+
+
+
+/* ===== GALLERY SECTION ФОТКИФОТКИФОТКИФОТКИФОТКИФОТКИФОТКИФОТКИФОТКИФОТКИФОТКИФОТКИФОТКИФОТКи ===== */
+.gallery {
+    background: var(--bg-color);
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Сетка галереи - 3 колонки на десктопе */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Контейнер для каждого элемента галереи */
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.4s ease;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Контейнер для изображения с фиксированными пропорциями */
+.gallery-image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3; /* Соотношение сторон 4:3 */
+    overflow: hidden;
+}
+
+/* Стили для самих изображений */
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Важно! Обрезает фото чтобы заполнить контейнер */
+    transition: all 0.4s ease;
+    filter: brightness(0.95);
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+/* Наложение с текстом при наведении */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    transition: all 0.4s ease;
+    padding: 1.5rem;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Контент внутри наложения */
+.gallery-content {
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-content {
+    transform: translateY(0);
+}
+
+.gallery-title {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-desc {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Кнопки действий галереи */
+.gallery-actions {
+    text-align: center;
+}
+
+/* ===== АДАПТИВНОСТЬ ДЛЯ ГАЛЕРЕИ ===== */
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+        gap: 1.25rem;
+    }
+    
+    .gallery-content {
+        padding: 1.25rem;
+    }
+    
+    .gallery-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 колонка на мобильных */
+        gap: 1rem;
+    }
+    
+    .gallery-item {
+        border-radius: 8px;
+    }
+    
+    .gallery-overlay {
+        opacity: 1; /* Всегда показываем overlay на мобильных */
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 30%,
+            rgba(0, 0, 0, 0.8) 100%
+        );
+    }
+    
+    .gallery-content {
+        transform: translateY(0);
+        padding: 1rem;
+    }
+    
+    .gallery-title {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-desc {
+        font-size: 0.85rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 480px) {
+    .gallery-grid {
+        gap: 0.75rem;
+    }
+    
+    .gallery-content {
+        padding: 0.75rem;
+    }
+    
+    .gallery-title {
+        font-size: 1rem;
+    }
+    
+    .gallery-desc {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===== АНИМАЦИЯ ДЛЯ ДОПОЛНИТЕЛЬНЫХ ФОТО ===== */
+.gallery-item.hidden {
+    display: none;
+}
+
+.gallery-item.fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== ИНДИКАТОР ЗАГРУЗКИ ===== */
+.loading-spinner {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+}
+
+.loading-spinner.active {
+    display: block;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*доп для скрытия фоток*/
+/* Простые стили для анимации кнопки */
+#loadMorePhotos {
+    transition: transform 0.2s ease !important;
+}
+
+/* Гарантируем что скрытые элементы не видны */
+.gallery-item {
+    transition: opacity 0.3s ease;
+}
+
+
+
+
+
+
+/* ===== BOOKING БУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУКБУК ===== */
+.booking {
+  padding: 5rem 0;
+  background: var(--card-bg);
+}
+
+.booking-card {
+  background: var(--bg-color);
+  border-radius: 15px;
+  padding: 3rem;
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.booking-content h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border: 1px solid var(--text-color);
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--text-color);
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 5px;
+  min-height: 100px;
+  resize: vertical;
+  transition: all 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.submit-btn {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+/*AENNNNNTTTTTTTTTTTTTTTTTTTTTTTTTTH*/
+.footer {
+  background: var(--header-bg);
+  color: var(--text-color);
+  padding: 3rem 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+
+
+
+
+
+/* ===== МЕДИА-ЗАПРОСЫ ДЛЯ АДАПТИВНОСТИ ===== */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+  .restaurants-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .burger-menu {
+    display: flex;
+  }
+  
+  .nav-actions {
+    display: none;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .restaurants-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-group {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-stats {
+    justify-content: center;
+  }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ===== УТИЛИТЫ ===== */
+.hidden {
+  display: none !important;
+}
+
+.active {
+  color: var(--accent-color) !important;
+}
+
+/* Плавная прокрутка */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Скрываем элементы не для текущего времени */
+.menu-item:not([data-time*="morning"]) {
+  display: none;
+}
+
+
+
+
+/*=== трири===*/
+/* ===== МОДАЛЬНОЕ ОКНО БРОНИРОВАНИЯ ===== */
+.booking-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.booking-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.booking-modal__content {
+    background: var(--card-bg);
+    border-radius: 20px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    transform: translateY(30px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    border: 1px solid var(--accent-color);
+}
+
+.booking-modal.active .booking-modal__content {
+    transform: translateY(0) scale(1);
+}
+
+.booking-modal__header {
+    background: linear-gradient(135deg, var(--accent-color), #fbbf24);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.booking-modal__icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.booking-modal__title {
+    color: var(--bg-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.booking-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.booking-modal__close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.booking-modal__body {
+    padding: 2rem;
+}
+
+.booking-modal__message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.booking-modal__details {
+    background: var(--bg-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.booking-modal__detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.booking-modal__detail:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.detail-value {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.booking-modal__tips {
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.booking-modal__tips h4 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.booking-modal__tips ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.booking-modal__tips li {
+    padding: 0.5rem 0;
+    color: var(--text-color);
+    opacity: 0.8;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.5;
+}
+
+.booking-modal__tips li::before {
+    content: '•';
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0.5rem;
+}
+
+.booking-modal__footer {
+    padding: 0 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.booking-modal__btn {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.booking-modal__btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.booking-modal__btn--secondary {
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+}
+
+.booking-modal__btn--secondary:hover {
+    background: var(--bg-color);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Анимация появления контента */
+.booking-modal__body > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.booking-modal.active .booking-modal__body > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.booking-modal.active .booking-modal__message {
+    transition-delay: 0.1s;
+}
+
+.booking-modal.active .booking-modal__details {
+    transition-delay: 0.2s;
+}
+
+.booking-modal.active .booking-modal__tips {
+    transition-delay: 0.3s;
+}
+
+.booking-modal.active .booking-modal__footer {
+    transition-delay: 0.4s;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    .booking-modal {
+        padding: 10px;
+    }
+    
+    .booking-modal__content {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+    
+    .booking-modal__header {
+        padding: 1.5rem;
+    }
+    
+    .booking-modal__icon {
+        font-size: 3rem;
+    }
+    
+    .booking-modal__title {
+        font-size: 1.5rem;
+    }
+    
+    .booking-modal__body {
+        padding: 1.5rem;
+    }
+    
+    .booking-modal__footer {
+        padding: 0 1.5rem 1.5rem;
+    }
+    
+    .booking-modal__btn {
+        padding: 0.875rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .booking-modal__header {
+        padding: 1rem;
+    }
+    
+    .booking-modal__body {
+        padding: 1rem;
+    }
+    
+    .booking-modal__footer {
+        padding: 0 1rem 1rem;
+    }
+    
+    .booking-modal__details,
+    .booking-modal__tips {
+        padding: 1rem;
+    }
+    
+    .booking-modal__detail {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
