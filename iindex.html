@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ru" data-time="morning">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiorentina - Итальянский ресторан</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <!-- Header -->
+<header class="header" id="header">
+    <nav class="nav">
+        <!-- Логотип -->
+        <div class="nav-logo">
+            <h1 class="logo">Fiorentina</h1>
+            <span class="since">с 1920</span>
+        </div>
+
+        <!-- Основное меню -->
+        <ul class="nav-menu">
+            <li><a href="#about" class="nav-link">О нас</a></li>
+            <li><a href="#restaurants" class="nav-link">Рестораны</a></li>
+            <li><a href="#gallery" class="nav-link">Галерея</a></li>
+            <li><a href="#contacts" class="nav-link">Контакты</a></li>
+        </ul>
+
+        <!-- Правая часть -->
+        <div class="nav-actions">
+            <button class="language-switcher">RU</button>
+            <button class="theme-toggle" id="themeToggle" title="Сменить настроение">
+                <span class="theme-icon">🌸</span>
+            </button>
+
+            <button class="booking-btn">Забронировать</button>
+        </div>
+
+        <!-- Бургер меню -->
+        <button class="burger-menu" id="burgerMenu" aria-label="Открыть меню">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+    </nav>
+</header>
+
+<!-- Модальное окно мобильного меню -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__content">
+        <div class="mobile-menu__header">
+            <div class="mobile-menu__logo">
+                <h2>Fiorentina</h2>
+                <span>с 1920</span>
+            </div>
+            <button class="mobile-menu__close" id="closeMenu" aria-label="Закрыть меню">
+                <span>&times;</span>
+            </button>
+        </div>
+        
+        <nav class="mobile-menu__nav">
+            <ul class="mobile-menu__list">
+                <li><a href="#about" class="mobile-menu__link">О нас</a></li>
+                <li><a href="#restaurants" class="mobile-menu__link">Рестораны</a></li>
+                <li><a href="#gallery" class="mobile-menu__link">Галерея</a></li>
+                <li><a href="#contacts" class="mobile-menu__link">Контакты</a></li>
+            </ul>
+        </nav>
+        
+        <div class="mobile-menu__actions">
+        <button class="mobile-menu__theme" id="mobileThemeToggle">
+            <span class="theme-icon">🌸</span>
+            <span>Сменить настроение</span>
+        </button>
+            <button class="mobile-menu__language">RU / EN</button>
+            <button class="mobile-menu__booking">Забронировать стол</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+         <!-- Фоновое изображение -->
+    <div class="hero-background">
+        <img src="./image/main.jpeg" alt="Элегантный интерьер ресторана Fiorentina" class="hero-image">
+        <img src="./image/lavender.jpg" alt="Умиротворенная атмосфера" class="hero-image peaceful-hero">
+        <img src="./image/sea.jpg" alt="Энергичная атмосфера" class="hero-image energetic-hero">
+        <img src="./image/Night.jpg" alt="Загадочная атмосфера" class="hero-image mysterious-hero">
+    </div>
+    
+    <!-- Затемнение с градиентом, адаптивное под темы -->
+    <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <p class="hero-subtitle fade-in">Традиции Флоренции с 1920 года</p>
+            <div class="hero-buttons fade-in">
+                <button class="btn-primary">Посмотреть меню</button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Наша история</h2>
+                    <p>В 1920 году во Флоренции семья Россини открыла небольшой тратторию, где подавали традиционные тосканские блюда. С тех пор прошло более ста лет, но мы сохранили секреты и дух той самой кухни.</p>
+                    <p>Сегодня Fiorentina — это сеть ресторанов в самых красивых городах Европы и Азии, где каждое блюдо рассказывает свою историю.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">лет традиций</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">городов</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">поколения</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="./image/about.jpg" alt="Интерьер ресторана Fiorentina" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Меню по времени суток -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Меню дня</h2>
+                <p class="time-indicator">Сейчас: <span class="current-time">Утро</span></p>
+            </div>
+
+            <!-- Карточки блюд -->
+            <div class="menu-grid">
+                <!-- Утренние блюда -->
+                <div class="menu-item" data-time="morning">
+                    <div class="menu-item-image">
+                        <img src="./image/spinnat.jpg" alt="Завтрак">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Frittata con Spinaci</h3>
+                        <p>Фриттата со шпинатом и козьим сыром</p>
+                        <span class="price">3200 ₸</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-time="morning">
+                    <div class="menu-item-image">
+                        <img src="./image/Yogurt.jpg" alt="Завтрак">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Yogurt con Frutta di Bosco</h3>
+                        <p>Греческий йогурт с ягодами и мёдом</p>
+                        <span class="price">2800 ₸</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-time="morning">
+                    <div class="menu-item-image">
+                        <img src="./image/marmellado.jpg" alt="Завтрак">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Cornetto alla Marmellata</h3>
+                        <p>Свежий корнетто с апельсиновым мармеладом</p>
+                        <span class="price">1800 ₸</span>
+                    </div>
+                </div>
+
+                <!-- Обеденные блюда -->
+                <div class="menu-item" data-time="day">
+                    <div class="menu-item-image">
+                        <img src="./image/griba.jpg" alt="Обед">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Risotto ai Funghi Porcini</h3>
+                        <p>Кремовое ризотто с белыми грибами</p>
+                        <span class="price">4500 ₸</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-time="day">
+                    <div class="menu-item-image">
+                        <img src="./image/Carbonara.jpg" alt="Обед">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Pasta alla Carbonara</h3>
+                        <p>Спагетти карбонара по римскому рецепту</p>
+                        <span class="price">4200 ₸</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-time="day">
+                    <div class="menu-item-image">
+                        <img src="./image/pomidoro.jpg" alt="Обед">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Insalata Caprese</h3>
+                        <p>Салат с моцареллой, томатами и базиликом</p>
+                        <span class="price">3800 ₸</span>
+                    </div>
+                </div>
+
+                <!-- Вечерние блюда -->
+                <div class="menu-item" data-time="evening">
+                    <div class="menu-item-image">
+                        <img src="./image/steik.jpg" alt="Ужин">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Bistecca alla Fiorentina</h3>
+                        <p>Стейк по-флорентийски на углях</p>
+                        <span class="price">8900 ₸</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-time="evening">
+                    <div class="menu-item-image">
+                        <img src="./image/fishlemon.jpg" alt="Ужин">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Branzino al Sale</h3>
+                        <p>Морской окунь в солевой корочке</p>
+                        <span class="price">6700 ₸</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-time="evening">
+                    <div class="menu-item-image">
+                        <img src="./image/makaroshki.jpg" alt="Ужин">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Agnolotti del Plin</h3>
+                        <p>Домашние равиоли с тремя видами мяса</p>
+                        <span class="price">5200 ₸</span>
+                    </div>
+                </div>
+
+                <!--NOCHNOEEE-->
+                <!-- Ночные блюда -->
+                 <div class="menu-item" data-time="night">
+                    <div class="menu-item-image">
+                        <img src="./image/pizza.jpg" alt="Ночное меню">
+                    </div>
+                     <div class="menu-item-content">
+                        <h3>Pizza Notte</h3>
+                        <p>Пицца с трюфелями и пармезаном</p>
+                        <span class="price">5500 ₸</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-time="night">
+                   <div class="menu-item-image">
+                       <img src="./image/zakuzki.jpg" alt="Ночное меню">
+                    </div>
+                     <div class="menu-item-content">
+                        <h3>Antipasti della Notte</h3>
+                        <p>Ассорти итальянских закусок</p>
+                        <span class="price">4800 ₸</span>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-time="night">
+                   <div class="menu-item-image">
+                       <img src="./image/Tiramisu.jpg" alt="Ночное меню">
+                    </div>
+                     <div class="menu-item-content">
+                        <h3>Tiramisu Classico</h3>
+                        <p>Классический тирамису с кофе маскарпоне</p>
+                        <span class="price">3200 ₸</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        <div class="gallery-actions fade-in">
+            <button class="btn-secondary" id="ShowAllMenu">
+                Показать меню
+                <span class="btn-arrow">↑</span>
+            </button>
+        </div>
+
+    <!-- Карусель популярных блюд -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-item">Pizza Margherita</div>
+                    <div class="carousel-item">Lasagna Bolognese</div>
+                    <div class="carousel-item">Tiramisù Classico</div>
+                    <div class="carousel-item">Osso Buco alla Milanese</div>
+                    <div class="carousel-item">Bruschetta al Pomodoro</div>
+                    <div class="carousel-item">Panna Cotta ai Frutti di Bosco</div>
+                    <div class="carousel-item">Risotto allo Zafferano</div>
+                    <div class="carousel-item">Tagliatelle al Tartufo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Рестораны -->
+    <section class="restaurants" id="restaurants">
+        <div class="container">
+            <h2>Наши рестораны</h2>
+            <div class="restaurants-grid">
+                <div class="restaurant-card">
+                    <h3>Алматы</h3>
+                    <div class="restaurant-image">
+                        <img src="./image/Almaty.jpg" alt="Fiorentina Алматы">
+                    </div>
+                    <button class="restaurant-btn">
+                        Подробнее
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3>Рим</h3>
+                    <div class="restaurant-image">
+                        <img src="./image/rome.jpg" alt="Fiorentina Рим">
+                    </div>
+                    <button class="restaurant-btn">
+                        Подробнее
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3>Вена</h3>
+                    <div class="restaurant-image">
+                        <img src="./image/vienna.jpg" alt="Fiorentina Вена">
+                    </div>
+                    <button class="restaurant-btn">
+                        Подробнее
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+
+                <div class="restaurant-card">
+                    <h3>Прага</h3>
+                    <div class="restaurant-image">
+                        <img src="./image/Prague.jpg" alt="Fiorentina Прага">
+                    </div>
+                    <button class="restaurant-btn">
+                        Подробнее
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Секция галереи -->
+<section class="gallery section-padding" id="gallery">
+    <div class="container">
+        <!-- Заголовок секции -->
+        <div class="section-header fade-in">
+            <h2>Галерея</h2>
+            <p class="section-subtitle">Фотографии, которые передают атмосферу нашего ресторана</p>
+        </div>
+
+        <!-- Сетка галереи -->
+        <div class="gallery-grid">
+            <!-- Фото 1 -->
+            <div class="gallery-item fade-in">
+                <div class="gallery-image-container">
+                    <img src="./image/first.jpg" alt="Элегантный интерьер ресторана с итальянским дизайном" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Наш интерьер</h3>
+                            <p class="gallery-desc">Элегантная атмосфера в стиле итальянской классики</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Фото 2 -->
+            <div class="gallery-item fade-in">
+                <div class="gallery-image-container">
+                    <img src="./image/chef.jpg" alt="Шеф-повар готовит традиционные итальянские блюда" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Искусство кухни</h3>
+                            <p class="gallery-desc">Наши шеф-повара создают кулинарные шедевры</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Фото 3 -->
+            <div class="gallery-item fade-in">
+                <div class="gallery-image-container">
+                    <img src="./image/seafood.jpg" alt="Свежие морепродукты и паста ручной работы" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Свежие ингредиенты</h3>
+                            <p class="gallery-desc">Только лучшие продукты для аутентичного вкуса</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Фото 4 -->
+            <div class="gallery-item fade-in">
+                <div class="gallery-image-container">
+                    <img src="./image/romantic.jpg" alt="Уютная веранда ресторана с вечерним освещением" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Вечерняя атмосфера</h3>
+                            <p class="gallery-desc">Романтическая обстановка при свечах</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Фото 5 -->
+            <div class="gallery-item fade-in">
+                <div class="gallery-image-container">
+                    <img src="./image/carbomara.jpg" alt="Блюдо пасты карбонара с трюфелем" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Паста Карбонара</h3>
+                            <p class="gallery-desc">Традиционный рецепт с пармезаном и гуанчиале</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Фото 6 -->
+            <div class="gallery-item fade-in">
+                <div class="gallery-image-container">
+                    <img src="./image/Family.jpg" alt="Семья" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Семейные фотографии</h3>
+                            <p class="gallery-desc">Вкусные блюда и лучшие воспоминания</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--7 photo-->
+            <div class="gallery-item fade-in">
+                <div class="gallery-image-container">
+                    <img src="./image/wedding.jpg" alt="Мероприятия" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Особые моменты</h3>
+                            <p class="gallery-desc">Организация праздников и торжеств</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--8 photo-->
+            <div class="gallery-item fade-in">
+                <div class="gallery-image-container">
+                    <img src="./image/wine.jpg" alt="Вино" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Винная коллекция</h3>
+                            <p class="gallery-desc">Лучшие итальянские вина для идеального ужина</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--9 photo-->
+            <div class="gallery-item fade-in">
+                <div class="gallery-image-container">
+                    <img src="./image/terrassa.jpg" alt="Терраса" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Летняя терраса</h3>
+                            <p class="gallery-desc">Обед на свежем воздухе в чудесную погоду</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка для показа больше фото -->
+        <div class="gallery-actions fade-in">
+            <button class="btn-secondary" id="loadMorePhotos">
+                Показать больше фотографий
+                <span class="btn-arrow">↓</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Бронирование -->
+    <section class="booking" id="contacts">
+        <div class="container">
+            <div class="booking-card">
+                <div class="booking-content">
+                    <h2>Забронировать стол</h2>
+                    <form class="booking-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Имя" required>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Телефон" required>
+                            <select required>
+                                <option value="">Выберите город</option>
+                                <option value="almaty">Алматы</option>
+                                <option value="rome">Рим</option>
+                                <option value="vienna">Вена</option>
+                                <option value="prague">Прага</option>
+                                <option value="almaty">Венеция</option>
+                                <option value="rome">Лондон</option>
+                                <option value="vienna">Париж</option>
+                                <option value="prague">Москва</option>
+                                <option value="almaty">Вашингтон</option>
+                                <option value="rome">Венеция</option>
+                                <option value="vienna">Лиссабон</option>
+                                <option value="prague">Амстердам</option>
+                                <option value="almaty">Стокгольм</option>
+                                <option value="rome">Милан</option>
+                                <option value="vienna">Неаполь</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" required>
+                            <input type="time" required>
+                            <select required>
+                                <option value="">Количество гостей</option>
+                                <option value="1">1 человек</option>
+                                <option value="2">2 человека</option>
+                                <option value="3">3 человека</option>
+                                <option value="4">4 человека</option>
+                                <option value="5+">5+ человек</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Особые пожелания"></textarea>
+                        <button type="submit" class="submit-btn">Забронировать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Модальное окно подтверждения бронирования -->
+<div class="booking-modal" id="bookingModal">
+    <div class="booking-modal__content">
+        <div class="booking-modal__header">
+            <h3 class="booking-modal__title">Бронирование принято!</h3>
+            <button class="booking-modal__close" id="closeBookingModal">
+                <span>&times;</span>
+            </button>
+        </div>
+        
+        <div class="booking-modal__body">
+            <p class="booking-modal__message">
+                Спасибо за вашу заявку! Наш менеджер свяжется с вами в течение 15 минут 
+                для подтверждения бронирования.
+            </p>
+            
+            <div class="booking-modal__details">
+                <div class="booking-modal__detail">
+                    <span class="detail-label">Время обработки:</span>
+                    <span class="detail-value">15 минут</span>
+                </div>
+                <div class="booking-modal__detail">
+                    <span class="detail-label">Телефон:</span>
+                    <span class="detail-value">+7 777 123 4567</span>
+                </div>
+            </div>
+            
+            <div class="booking-modal__tips">
+                <h4>Полезно знать:</h4>
+                <ul>
+                    <li>Рекомендуем приходить за 5-10 минут до назначенного времени</li>
+                    <li>При отмене бронирования просим сообщить за 2 часа</li>
+                    <li>Стол бронируется на 15 минут дольше указанного времени</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="booking-modal__footer">
+            <button class="booking-modal__btn" id="confirmBookingBtn">
+                Понятно, жду звонка!
+            </button>
+            <button class="booking-modal__btn booking-modal__btn--secondary" id="editBookingBtn">
+                Изменить бронирование
+            </button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+    <!--ФУТЕЕЕЕЕР--> 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fiorentina</h3>
+                    <p>Итальянский ресторан с 1920 года</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>Алматы: +7 777 123 4567</p>
+                    <p>Рим: +39 06 123 4567</p>
+                    <p>info@fiorentina.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Часы работы</h4>
+                    <p>Пн-Вс: 08:00 - 00:00</p>
+                    <p>Кухня: до 23:00</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Следите за нами</h4>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fiorentina. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+                  
+      
+                    
+
+    <script src="./main.js"></script>
+
